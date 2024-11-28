@@ -1,0 +1,274 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="e_nauka.Admin" %>
+
+
+<!DOCTYPE html>
+
+<html style="    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;">
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><%: Page.Title %> - administrator</title>
+
+        <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="../img/admin-icon1.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="~/Scripts/custom-style.css"  /> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5b7cb94577.js" crossorigin="anonymous"></script> 
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer>
+
+</script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+
+<body  style="    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color:#a7cbfd;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;   
+    
+    ">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+    <header>
+<%--        <div class="baner" style="background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);" >
+            <i class="fa-solid fa-code" style="color: #000000;font-size:40px;"></i><h2 class="appName">&ensp;e-nauka</h2>
+        </div>--%>
+
+
+
+            <nav class="navbar navbar-expand-sm  navbar-dark bg-dark" >
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarCenteredExample"
+    >
+
+                <ul class="navbar-nav " >
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+                    <li class="nav-item">
+
+
+
+
+                        <a class="nav-link active" aria-current="page" href="../AdminSec/AdminStart"
+style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc; 
+letter-spacing: 1px;display: block;"
+>
+                            Start</a>
+                    </li>
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="../AdminSec/AdminPending"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc;letter-spacing: 1px;display: block;"
+                            
+                            >Oczekujący</a>
+                    </li>
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AdminSec/AdminUsers"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc;letter-spacing: 1px;display: block;"
+                            >
+                            
+                            Użytkownicy</a>
+                    </li>
+
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AdminSec/AdminContact"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc;letter-spacing: 1px;display: block;"
+                            
+                            >Sugestie</a>
+                    </li>
+                                       
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AdminSec/AdminAccount"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc;letter-spacing: 1px;display: block;"
+                            >
+                            
+                            Konto</a>
+                    </li>
+                                        
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AdminSec/AdminLogout"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;
+color: #a8c4fc;letter-spacing: 1px;display: block;"
+                            
+                            >
+                            Wyloguj</a>
+                    </li>
+
+                </ul>
+        </div>
+            </div>
+        </div>
+    </nav>
+
+
+    </header>
+        <div  style="    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    width: 100%;">
+
+            <main style="    background-color: white;
+    width: 80%;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: #072a63;
+    height: auto;
+    min-height: 100%; " >
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+            </asp:ContentPlaceHolder>
+                </main>
+        </div>
+
+                    <footer style=" /*position:fixed; bottom:0;*/
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+                        
+                        ">
+                <p style="margin:2px 0px 0px 0px;
+    color: #a8c4fc;
+    font-family: Montserrat, sans-serif;">
+                    &copy; 2024&ensp;&ensp;e-nauka - Weronika Litowczenko</p>
+            </footer>
+
+
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
+
