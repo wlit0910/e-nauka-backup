@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Task.master.cs" Inherits="e_nauka.Task" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><%: Page.Title %> - Zadanie</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+        <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="img/user-icon1.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="~/Scripts/custom-style.css"  /> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5b7cb94577.js" crossorigin="anonymous"></script> 
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer>
+
+</script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+
+    <header>
+<%--        <div class="baner" style="border-bottom:solid;border-color:black;border-width:2px;">
+            <i class="fa-solid fa-code" style="color: #000000;font-size:40px;"></i><h2 class="appName">&ensp;e-nauka</h2>
+        </div>--%>
+
+    </header>
+        
+            <main style="background-color:white;">
+
+
+            <asp:ContentPlaceHolder ID="TaskContent" runat="server" >
+
+            </asp:ContentPlaceHolder>
+
+
+                </main>
+     
+
+                    <div style="
+/*position:fixed; bottom:0;*/
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+                        
+                        ">
+                <p style="margin:2px 0px 0px 0px;
+    color: rgba(255,181,154,1);
+    font-family: Montserrat, sans-serif;">
+                    &copy; 2024&ensp;&ensp;e-nauka - Weronika Litowczenko</p>
+            </div>
+    </form>
+
+
+</body>
+</html>

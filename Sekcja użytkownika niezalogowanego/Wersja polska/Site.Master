@@ -1,0 +1,278 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="e_nauka.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - e-nauka</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="../img/user-icon1.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="~/Scripts/custom-style.css"  /> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5b7cb94577.js" crossorigin="anonymous"></script> 
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer>
+
+</script>
+    
+
+</head>
+<body class="b1">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+    <header>
+<%--        <div class="baner" >
+            <i class="fa-solid fa-code" style="color: #000000;font-size:40px;"></i><h2 class="appName">&ensp;e-nauka</h2>
+        </div>--%>
+
+        <style>
+            .language-switcher {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 10px;
+}
+
+.lang-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.lang-link:hover {
+    color: #ff8454;
+}
+
+.flag-icon {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+        </style>
+
+
+            <nav class="navbar navbar-expand-sm  navbar-dark bg-dark" >
+
+                <nav class="language-switcher">
+    <a href="Default.aspx" class="lang-link">
+        <img src="img/polish-flag.png" alt="POL" class="flag-icon">
+        Polski
+    </a>
+    <a href="GuestENG/DefaultENG.aspx" class="lang-link">
+        <img src="img/english-flag.png" alt="ENG" class="flag-icon">
+        English
+    </a>
+</nav>
+
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarCenteredExample"
+    >
+
+                <ul class="navbar-nav " >
+
+                    <li class="nav-item">
+
+
+
+                        <%--MARGIN-LEFT:-80PX--%>
+                        <a class="nav-link active" aria-current="page" href="Default"
+style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;margin-left:-80px;"  
+>
+                            Główna</a>
+                    </li>
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/Demo"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;"
+                            
+                            >Demo</a>
+                    </li>
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="About"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;"
+                            >
+                            
+                            O nas</a>
+                    </li>
+
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;"
+                            
+                            >Kontakt</a>
+                    </li>
+                                       
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;"
+                            >
+                            
+                            Logowanie</a>
+                    </li>
+                                        
+
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                                            <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+                        <li class="nav-item"><a class="nav-link" style="pointer-events: none" runat="server" href="~/"></a></li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register"
+                            style ="color: coral; font-family: Montserrat,sans-serif; border-radius: 10px; text-decoration: none; 
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+font-weight: bold;font-size: medium;color: coral;letter-spacing: 1px;display: block;"
+                            
+                            >
+                            Rejestracja</a>
+                    </li>
+
+                </ul>
+        </div>
+            </div>
+        </div>
+    </nav>
+
+
+    </header>
+        <div  class="pageBg">
+            <main class="pageContent" >
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+            </asp:ContentPlaceHolder>
+                </main>
+        </div>
+
+                    <div style="
+/*position:fixed; bottom:0;*/
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+                        
+                        ">
+                <p style="margin:2px 0px 0px 0px;
+    color: rgba(255,181,154,1);
+    font-family: Montserrat, sans-serif;">
+                    &copy; 2024&ensp;&ensp;e-nauka - Weronika Litowczenko</p>
+            </div>
+
+
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

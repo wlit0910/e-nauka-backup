@@ -1,0 +1,38 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="e_nauka.Site_Mobile" %>
+
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wypróbuj e-nauka na laptopie lub komputerze</title>
+    <style>
+        /* Ukryj wszystko oprócz komunikatu na urz¹dzeniach mobilnych */
+        body {
+            font-family: Montserrat, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h3 {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        /* Ukrycie placeholdera na urz¹dzeniach mobilnych */
+        @media only screen and (max-width: 768px) {
+            #MainContent {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Przepraszamy, serwis e-nauka nie jest dostepny na urzadzenia mobilne.</h3>
+
+
+        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+    </div>
+</body>
+</html>
